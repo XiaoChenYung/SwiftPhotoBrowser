@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		751A891752AEAEA33F4A8131 /* Pods_SwiftPhotoBrowserDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6FCC51CB202EACDA7814B /* Pods_SwiftPhotoBrowserDemo.framework */; };
 		9219DF031F68F5A100C8F946 /* PhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219DF021F68F5A100C8F946 /* PhotoManager.swift */; };
 		92E52A5C1F68CC2D00DF0D11 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E52A5B1F68CC2D00DF0D11 /* AppDelegate.swift */; };
 		92E52A5E1F68CC2D00DF0D11 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E52A5D1F68CC2D00DF0D11 /* ViewController.swift */; };
@@ -19,7 +18,7 @@
 		92E52A7A1F68CEC700DF0D11 /* SwiftPhotoBrowser.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 92E52A721F68CEC600DF0D11 /* SwiftPhotoBrowser.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		92E52A801F68D93900DF0D11 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E52A7F1F68D93900DF0D11 /* Album.swift */; };
 		92E52A821F68DAFF00DF0D11 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E52A811F68DAFF00DF0D11 /* Photo.swift */; };
-		AAD3E4EBE20CBED9F85607B2 /* Pods_SwiftPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA164D843674D6CFBF2A504 /* Pods_SwiftPhotoBrowser.framework */; };
+		F78C014588210F78C7B0415A /* Pods_SwiftPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BA164D843674D6CFBF2A504 /* Pods_SwiftPhotoBrowser.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,11 +46,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		10EAA0002F27C6D76091E9A0 /* Pods-SwiftPhotoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPhotoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPhotoBrowser/Pods-SwiftPhotoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 		1BA164D843674D6CFBF2A504 /* Pods_SwiftPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2A6778BAFED5639B0CD9E92D /* Pods-SwiftPhotoBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPhotoBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPhotoBrowser/Pods-SwiftPhotoBrowser.release.xcconfig"; sourceTree = "<group>"; };
-		2D25F536E9958C40DD423F05 /* Pods-SwiftPhotoBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPhotoBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPhotoBrowser/Pods-SwiftPhotoBrowser.debug.xcconfig"; sourceTree = "<group>"; };
-		83B2D18EA5487590F3DA96B5 /* Pods-SwiftPhotoBrowserDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPhotoBrowserDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPhotoBrowserDemo/Pods-SwiftPhotoBrowserDemo.release.xcconfig"; sourceTree = "<group>"; };
-		8C72246479542954AE183F18 /* Pods-SwiftPhotoBrowserDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPhotoBrowserDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPhotoBrowserDemo/Pods-SwiftPhotoBrowserDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		9219DF021F68F5A100C8F946 /* PhotoManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoManager.swift; sourceTree = "<group>"; };
 		92E52A581F68CC2D00DF0D11 /* SwiftPhotoBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPhotoBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E52A5B1F68CC2D00DF0D11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +62,7 @@
 		92E52A7F1F68D93900DF0D11 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		92E52A811F68DAFF00DF0D11 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		E8C6FCC51CB202EACDA7814B /* Pods_SwiftPhotoBrowserDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPhotoBrowserDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F19C7A1ADF4FB9755133426E /* Pods-SwiftPhotoBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPhotoBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPhotoBrowser/Pods-SwiftPhotoBrowser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +71,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				92E52A791F68CEC700DF0D11 /* SwiftPhotoBrowser.framework in Frameworks */,
-				751A891752AEAEA33F4A8131 /* Pods_SwiftPhotoBrowserDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAD3E4EBE20CBED9F85607B2 /* Pods_SwiftPhotoBrowser.framework in Frameworks */,
+				F78C014588210F78C7B0415A /* Pods_SwiftPhotoBrowser.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,10 +88,8 @@
 		6FDF6D34CB957CAC9F9AEE13 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				2D25F536E9958C40DD423F05 /* Pods-SwiftPhotoBrowser.debug.xcconfig */,
-				2A6778BAFED5639B0CD9E92D /* Pods-SwiftPhotoBrowser.release.xcconfig */,
-				8C72246479542954AE183F18 /* Pods-SwiftPhotoBrowserDemo.debug.xcconfig */,
-				83B2D18EA5487590F3DA96B5 /* Pods-SwiftPhotoBrowserDemo.release.xcconfig */,
+				10EAA0002F27C6D76091E9A0 /* Pods-SwiftPhotoBrowser.debug.xcconfig */,
+				F19C7A1ADF4FB9755133426E /* Pods-SwiftPhotoBrowser.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -172,13 +166,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92E52A6A1F68CC2D00DF0D11 /* Build configuration list for PBXNativeTarget "SwiftPhotoBrowserDemo" */;
 			buildPhases = (
-				13F4955A86FF110CE1934238 /* [CP] Check Pods Manifest.lock */,
 				92E52A541F68CC2D00DF0D11 /* Sources */,
 				92E52A551F68CC2D00DF0D11 /* Frameworks */,
 				92E52A561F68CC2D00DF0D11 /* Resources */,
 				92E52A7E1F68CEC700DF0D11 /* Embed Frameworks */,
-				3C9650DE7F1708397745913F /* [CP] Embed Pods Frameworks */,
-				82BADA6037249A508D9F5F02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,12 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92E52A7D1F68CEC700DF0D11 /* Build configuration list for PBXNativeTarget "SwiftPhotoBrowser" */;
 			buildPhases = (
-				1585757ECEEB6C12462CADC6 /* [CP] Check Pods Manifest.lock */,
+				AB812862EAC2440F72AC1466 /* [CP] Check Pods Manifest.lock */,
 				92E52A6D1F68CEC600DF0D11 /* Sources */,
 				92E52A6E1F68CEC600DF0D11 /* Frameworks */,
 				92E52A6F1F68CEC600DF0D11 /* Headers */,
 				92E52A701F68CEC600DF0D11 /* Resources */,
-				B1B1C2492DB0AF81E1F4BD3F /* [CP] Copy Pods Resources */,
+				9BA07FBBD59F3AAA6A9B6813 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,67 +264,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		13F4955A86FF110CE1934238 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		1585757ECEEB6C12462CADC6 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		3C9650DE7F1708397745913F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftPhotoBrowserDemo/Pods-SwiftPhotoBrowserDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		82BADA6037249A508D9F5F02 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftPhotoBrowserDemo/Pods-SwiftPhotoBrowserDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B1B1C2492DB0AF81E1F4BD3F /* [CP] Copy Pods Resources */ = {
+		9BA07FBBD59F3AAA6A9B6813 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,6 +277,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SwiftPhotoBrowser/Pods-SwiftPhotoBrowser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB812862EAC2440F72AC1466 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -497,7 +443,6 @@
 		};
 		92E52A6B1F68CC2D00DF0D11 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8C72246479542954AE183F18 /* Pods-SwiftPhotoBrowserDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -512,7 +457,6 @@
 		};
 		92E52A6C1F68CC2D00DF0D11 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83B2D18EA5487590F3DA96B5 /* Pods-SwiftPhotoBrowserDemo.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -527,7 +471,7 @@
 		};
 		92E52A7B1F68CEC700DF0D11 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2D25F536E9958C40DD423F05 /* Pods-SwiftPhotoBrowser.debug.xcconfig */;
+			baseConfigurationReference = 10EAA0002F27C6D76091E9A0 /* Pods-SwiftPhotoBrowser.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -552,7 +496,7 @@
 		};
 		92E52A7C1F68CEC700DF0D11 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2A6778BAFED5639B0CD9E92D /* Pods-SwiftPhotoBrowser.release.xcconfig */;
+			baseConfigurationReference = F19C7A1ADF4FB9755133426E /* Pods-SwiftPhotoBrowser.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
