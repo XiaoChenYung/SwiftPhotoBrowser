@@ -25,7 +25,7 @@ enum MediaSubType {
     case Video
 }
 
-public class Photo {
+public struct Photo {
     var asset: PHAsset?
     var identifier: String?
     var orginalURL: NSURL?

@@ -9,7 +9,7 @@
 import Foundation
 import Photos
 
-public class Album {
+public struct Album {
     var name: String? // album name
     var count: Int = 0 // photos count
     var asset: PHAsset? // cover asset

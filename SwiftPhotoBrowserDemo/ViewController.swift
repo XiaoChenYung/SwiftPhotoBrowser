@@ -7,12 +7,21 @@
 //
 
 import UIKit
-
+import SwiftPhotoBrowser
 
 class ViewController: UIViewController {
+    
+    let manager = PhotoManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        manager.fetchAllAlbum { (array) in
+            print(array)
+        }
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
