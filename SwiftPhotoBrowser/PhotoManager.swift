@@ -128,6 +128,17 @@ public class PhotoManager {
             }
         }
         
+        let userAlbums = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .smartAlbumUserLibrary, options: nil)
+        userAlbums.enumerateObjects(options: .concurrent) { (collection, idx, stop) in
+            let option = PHFetchOptions()
+            option.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
+            if self.type == .Photo {
+                option.predicate = NSPredicate(format: "mediaType == %ld", [PHAssetMediaType.image])
+            } else if self.type == .Video {
+                
+            }
+        }
+        
         
     }
 }
