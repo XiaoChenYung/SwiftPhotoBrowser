@@ -14,7 +14,7 @@ public struct Album {
     var count: Int = 0 // photos count
     var asset: PHAsset? // cover asset
     var coverImage: UIImage?
-    var result: PHFetchResult<AnyObject>? // photos set
+    var result: PHFetchResult<PHAsset>? // photos set
     var index: Int = 0
     var selCount: Int = 0
     var nameWidth: Int = 0 // album name width

@@ -14,8 +14,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let sss = SwiftPhotoBrowser()
-        sss.log(str: "hhhh")
+        let photoManager = PhotoManager()
+        photoManager.fetchAllAlbum(callback: { albums in
+            print(albums)
+        }, showSeletedTag: true)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
