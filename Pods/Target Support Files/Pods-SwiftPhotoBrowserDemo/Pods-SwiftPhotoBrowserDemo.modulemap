@@ -1,0 +1,6 @@
+framework module Pods_SwiftPhotoBrowserDemo {
+  umbrella header "Pods-SwiftPhotoBrowserDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}
