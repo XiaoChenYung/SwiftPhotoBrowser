@@ -96,14 +96,15 @@ public class PhotoManager {
             option.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
             switch self.type {
             case .Photo:
-                option.predicate = NSPredicate(format: "mediaType == %ld", [PHAssetMediaType.image])
+                option.predicate = NSPredicate(format: "mediaType == %d",  Int8(PHAssetMediaType.image.rawValue))
                 break
             case .Video:
-                option.predicate = NSPredicate(format: "mediaType == %ld", [PHAssetMediaType.video])
+                option.predicate = NSPredicate(format: "mediaType == %@", [PHAssetMediaType.video])
                 break
             default: break
             }
             let result = PHAsset.fetchAssets(in: collection, options: option)
+            print(collection.localizedTitle! + "\(result.count)")
             if result.count > 0 && collection.localizedTitle != "Recently Deleted" {
                 var albumModel = Album()
                 albumModel.count = result.count
