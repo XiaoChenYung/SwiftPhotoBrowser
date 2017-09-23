@@ -89,7 +89,7 @@ public class PhotoManager {
     /// - Parameters:
     ///   - callback: callback
     ///   - showSeletedTag:
-    public func fetchAllAlbum(callback: FetchAlbumCallback, showSeletedTag: Bool) {
+    public func fetchAllAlbum(callback: FetchAlbumCallback?, showSeletedTag: Bool) {
         let smart = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .albumRegular, options: nil)
         smart.enumerateObjects(options: .concurrent) { (collection, idx, stop) in
             let option = PHFetchOptions()
@@ -135,10 +135,56 @@ public class PhotoManager {
             if self.type == .Photo {
                 option.predicate = NSPredicate(format: "mediaType == %ld", [PHAssetMediaType.image])
             } else if self.type == .Video {
-                
+                option.predicate = NSPredicate(format: "mediaType == %ld", [PHAssetMediaType.video])
+            }
+            let result = PHAsset.fetchAssets(in: collection, options: option)
+            if result.count > 0 {
+                var album = Album()
+                album.count = result.count
+                album.name = collection.localizedTitle
+                album.result = result
+                self.albums.append(album)
+                if showSeletedTag {
+                    if self.selectedList.count > 0 {
+                        let photo = self.selectedList.first
+                        result.enumerateObjects(options: .concurrent, using: { (asset, idx, stop) in
+                            if asset.localIdentifier == photo?.asset?.localIdentifier {
+                                album.selCount += 1
+                                stop.pointee = false
+                            }
+                        })
+                    }
+                }
             }
         }
         
-        
+        for (index, obj) in self.albums.enumerated() {
+            var album = obj
+            album.index = index
+            if showSeletedTag {
+                if index == 0 {
+                    album.selCount += self.selectedList.count
+                }
+            }
+        }
+        if callback != nil {
+            callback!(self.albums)
+        }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

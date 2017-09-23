@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         let photoManager = PhotoManager()
         photoManager.fetchAllAlbum(callback: { albums in
             print(albums)
