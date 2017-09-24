@@ -99,7 +99,7 @@ public class PhotoManager {
                 option.predicate = NSPredicate(format: "mediaType == %d",  Int8(PHAssetMediaType.image.rawValue))
                 break
             case .Video:
-                option.predicate = NSPredicate(format: "mediaType == %@", [PHAssetMediaType.video])
+                option.predicate = NSPredicate(format: "mediaType == %d", Int8(PHAssetMediaType.video.rawValue))
                 break
             default: break
             }
