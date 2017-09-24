@@ -174,7 +174,9 @@ public class PhotoManager {
     }
     
     
-    
+    func fetchPhotosWithResult(result: PHFetchResult<PHAsset>, index: Int, callback: FetchPhotosCallback?) {
+        
+    }
     
     
     
