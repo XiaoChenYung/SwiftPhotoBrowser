@@ -175,6 +175,9 @@ public class PhotoManager {
     
     
     func fetchPhotosWithResult(result: PHFetchResult<PHAsset>, index: Int, callback: FetchPhotosCallback?) {
+        var photos = Array<Photo>()
+        var videos = Array<Photo>()
+        var objs = Array<Photo>()
         
     }
     
