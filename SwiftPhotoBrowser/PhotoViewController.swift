@@ -21,6 +21,13 @@ class PhotoViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    private func setupUI() {
+        let spacing = self.manager?.spacing
+        let width = self.view.frame.width
+        let height = self.view.frame.height
+//        let itemWidth = (width - spacing * self.manager?.rowCount - 1)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
