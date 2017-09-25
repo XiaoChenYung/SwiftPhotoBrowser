@@ -9,10 +9,12 @@
 import Foundation
 
 enum Device {
+    
     static func iOS_9_1_Later() -> Bool {
         let _v = UIDevice.current.systemVersion
         return Float(_v)! >= Float(9.1)
     }
+    
     static func iPhone6s_Later() -> Bool {
         var systemInfo = utsname()
         uname(&systemInfo)

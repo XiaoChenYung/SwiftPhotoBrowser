@@ -222,11 +222,36 @@ public class PhotoManager {
                         photo.type = self.fetchGifPhoto ? .gif : .photo
                     }
                 } else {
-                    if Device.iOS_9_1_Later()  {
-                        
+                    if Device.iOS_9_1_Later() && Device.iPhone6s_Later() {
+                        if asset.mediaSubtypes == .photoLive {
+                            if !self.singleSeleted {
+                                photo.type = self.fetchLivePhoto ? .livePhoto : .photo
+                            } else {
+                                photo.type = .photo
+                            }
+                        } else {
+                            photo.type = .photo
+                        }
+                    } else {
+                        photo.type = .photo
                     }
                 }
+                photos.append(photo)
+            } else if asset.mediaType == .video {
+                photo.subType = .video
+                photo.type = .video
+                PHImageManager.default().requestAVAsset(forVideo: asset, options: nil, resultHandler: { (asset, mix, info) in
+                    photo.avAssert = asset
+                })
+                let timeLength = String(format: "%0.0f", asset.duration)
+                photo.videoTime = timeLength
+                videos.append(photo)
             }
+            photo.currentAlbumIndex = index
+            objs.append(photo)
+        }
+        if callback != nil {
+            callback!(photos, videos, objs)
         }
     }
     
