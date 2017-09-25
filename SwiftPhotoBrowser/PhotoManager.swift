@@ -40,7 +40,8 @@ public class PhotoManager {
     var netPhotosURLs: Array<Any>?
     var outerCamera: Bool = false
     var openCamera: Bool = true
-    var lookLivePhoto: Bool = false
+    var fetchLivePhoto: Bool = false
+    var fetchGifPhoto: Bool = false
     var separatePhotoAndVideo: Bool = false
     var goCamera: Bool = false
     var maxCount: Int = 10
@@ -51,23 +52,23 @@ public class PhotoManager {
     
     var albums = Array<Album>()
     var selectedList = Array<Photo>()
-    var selectedPhotos = Array<Album>()
-    var selectedVideos = Array<Album>()
-    var cameraList = Array<Album>()
-    var cameraPhotos = Array<Album>()
-    var cameraVideos = Array<Album>()
-    var endCameraList = Array<Album>()
-    var endCameraPhotos = Array<Album>()
-    var endCameraVideos = Array<Album>()
-    var selectedCameraList = Array<Album>()
-    var selectedCameraPhotos = Array<Album>()
-    var selectedCameraVideos = Array<Album>()
-    var endSelectedCameraList = Array<Album>()
-    var endSelectedCameraPhotos = Array<Album>()
-    var endSelectedCameraVideos = Array<Album>()
-    var endSelectedList = Array<Album>()
-    var endSelectedPhotos = Array<Album>()
-    var endSelectedVideos = Array<Album>()
+    var selectedPhotos = Array<Photo>()
+    var selectedVideos = Array<Photo>()
+    var cameraList = Array<Photo>()
+    var cameraPhotos = Array<Photo>()
+    var cameraVideos = Array<Photo>()
+    var endCameraList = Array<Photo>()
+    var endCameraPhotos = Array<Photo>()
+    var endCameraVideos = Array<Photo>()
+    var selectedCameraList = Array<Photo>()
+    var selectedCameraPhotos = Array<Photo>()
+    var selectedCameraVideos = Array<Photo>()
+    var endSelectedCameraList = Array<Photo>()
+    var endSelectedCameraPhotos = Array<Photo>()
+    var endSelectedCameraVideos = Array<Photo>()
+    var endSelectedList = Array<Photo>()
+    var endSelectedPhotos = Array<Photo>()
+    var endSelectedVideos = Array<Photo>()
     
     var type: SeletedType = .Photo
     
@@ -121,7 +122,7 @@ public class PhotoManager {
                         result.enumerateObjects(options: .concurrent, using: { (asset, idx, stop) in
                             if asset.localIdentifier == photo?.asset?.localIdentifier {
                                 albumModel.selCount += 1
-                                stop.pointee = false
+                                stop.pointee = true
                             }
                         })
                     }
@@ -151,7 +152,7 @@ public class PhotoManager {
                         result.enumerateObjects(options: .concurrent, using: { (asset, idx, stop) in
                             if asset.localIdentifier == photo?.asset?.localIdentifier {
                                 album.selCount += 1
-                                stop.pointee = false
+                                stop.pointee = true
                             }
                         })
                     }
@@ -173,12 +174,60 @@ public class PhotoManager {
         }
     }
     
+    public func test() {
+        Device.iPhone6s_Later()
+    }
     
     func fetchPhotosWithResult(result: PHFetchResult<PHAsset>, index: Int, callback: FetchPhotosCallback?) {
         var photos = Array<Photo>()
         var videos = Array<Photo>()
         var objs = Array<Photo>()
-        
+        result.enumerateObjects(options: .concurrent) { (asset, idx, stop) in
+            var photo = Photo()
+            photo.asset = asset
+            if self.selectedList.count > 0 {
+                var tempSelectedList = self.selectedList
+                for (idx ,model) in tempSelectedList.enumerated() {
+                    if model.asset?.localIdentifier == photo.asset?.localIdentifier {
+                        photo.selected = true
+                        if  model.type == .photo ||
+                            model.type == .gif   ||
+                            model.type == .livePhoto   ||
+                            model.type == .cameraPhoto {
+                            if model.type == .cameraPhoto {
+                                self.selectedCameraPhotos[idx] = photo
+                            } else {
+                                self.selectedPhotos[idx] = photo
+                            }
+                        } else {
+                            if model.type == .cameraVideo {
+                                self.selectedCameraVideos[idx] = photo
+                            } else {
+                                self.selectedVideos[idx] = photo
+                            }
+                        }
+                        self.selectedList[idx] = photo
+                        photo.thumbPhoto = model.thumbPhoto
+                        photo.previewPhoto = model.previewPhoto
+                        photo.isLiveOhotoOff = model.isLiveOhotoOff
+                    }
+                }
+            }
+            if asset.mediaType == .image {
+                photo.subType = .photo
+                if (asset.value(forKey: "filename") as! String).hasPrefix("GIF") {
+                    if self.singleSeleted && self.singleSeleteClip {
+                        photo.type = .photo
+                    } else {
+                        photo.type = self.fetchGifPhoto ? .gif : .photo
+                    }
+                } else {
+                    if Device.iOS_9_1_Later()  {
+                        
+                    }
+                }
+            }
+        }
     }
     
     

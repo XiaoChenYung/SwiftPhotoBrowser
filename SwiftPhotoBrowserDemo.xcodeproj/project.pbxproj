@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8F14AA0E5462E350D8540ABF /* Pods_SwiftPhotoBrowser.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DEA81970FA5CAE9273200A0 /* Pods_SwiftPhotoBrowser.framework */; };
+		920024171F78D01F00C5DA86 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 920024161F78D01F00C5DA86 /* Tools.swift */; };
 		9219DF151F69306F00C8F946 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219DF141F69306F00C8F946 /* AppDelegate.swift */; };
 		9219DF171F69306F00C8F946 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9219DF161F69306F00C8F946 /* ViewController.swift */; };
 		9219DF1A1F69307000C8F946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9219DF181F69307000C8F946 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		1D43D3BD8BAAD97DAE45E18F /* Pods-SwiftPhotoBrowserDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftPhotoBrowserDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftPhotoBrowserDemo/Pods-SwiftPhotoBrowserDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		1DEA81970FA5CAE9273200A0 /* Pods_SwiftPhotoBrowser.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftPhotoBrowser.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		920024161F78D01F00C5DA86 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		9219DF111F69306F00C8F946 /* SwiftPhotoBrowserDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPhotoBrowserDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9219DF141F69306F00C8F946 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9219DF161F69306F00C8F946 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				92DD18CB1F74E02A0067ED09 /* Album.swift */,
 				92DD18CA1F74E02A0067ED09 /* Photo.swift */,
 				92DD18CC1F74E02A0067ED09 /* PhotoManager.swift */,
+				920024161F78D01F00C5DA86 /* Tools.swift */,
 				9219DF2D1F69312500C8F946 /* SwiftPhotoBrowser.h */,
 				9219DF381F69313F00C8F946 /* SwiftPhotoBrowser.swift */,
 				9219DF2E1F69312500C8F946 /* Info.plist */,
@@ -371,6 +374,7 @@
 				9219DF391F69313F00C8F946 /* SwiftPhotoBrowser.swift in Sources */,
 				92DD18CF1F74E02A0067ED09 /* PhotoManager.swift in Sources */,
 				92DD18CE1F74E02A0067ED09 /* Album.swift in Sources */,
+				920024171F78D01F00C5DA86 /* Tools.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

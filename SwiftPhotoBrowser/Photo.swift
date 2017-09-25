@@ -10,19 +10,19 @@ import Foundation
 import Photos
 
 enum MediaType {
-    case Photo
-    case LivePhoto
-    case Gif
-    case Video
-    case Audio
-    case CameraPhoto
-    case CameraVideo
-    case Camera
+    case photo
+    case livePhoto
+    case gif
+    case video
+    case audio
+    case cameraPhoto
+    case cameraVideo
+    case camera
 }
 
 enum MediaSubType {
-    case Photo
-    case Video
+    case photo
+    case video
 }
 
 public struct Photo {
