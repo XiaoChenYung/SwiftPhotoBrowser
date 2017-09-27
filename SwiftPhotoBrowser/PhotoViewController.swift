@@ -8,13 +8,13 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController {
+class PhotoViewController: UIViewController, UICollectionViewDelegate {
     
     var manager: PhotoManager
-    var collection: UICollectionView?
-    var videos: Array<Photo>?
-    var photos: Array<Photo>?
-    var objs: Array<Photo>?
+    var collectionView: UICollectionView?
+    lazy var videos = Array<Photo>()
+    lazy var photos = Array<Photo>()
+    lazy var objs = Array<Photo>()
     
     public init(manager: PhotoManager) {
         self.manager = manager
@@ -45,7 +45,14 @@ class PhotoViewController: UIViewController {
         flowlayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         flowlayout.minimumLineSpacing = spacing
         flowlayout.minimumInteritemSpacing = spacing
-        self.collection = UICollectionView(frame: CGRect(x: 0, y: 0, width: width, height: height), collectionViewLayout: flowlayout)
+        self.collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: width, height: height), collectionViewLayout: flowlayout)
+        self.collectionView?.scrollIndicatorInsets = self.collectionView!.contentInset
+        self.collectionView?.dataSource = self
+        self.collectionView?.delegate = self
+        self.collectionView?.alwaysBounceVertical = true
+        self.collectionView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        self.collectionView?.backgroundColor = UIColor.white
+        self.automaticallyAdjustsScrollViewInsets = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,4 +60,13 @@ class PhotoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+extension PhotoViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.objs.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return UICollectionViewCell()
+    }
 }
