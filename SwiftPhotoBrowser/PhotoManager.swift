@@ -26,7 +26,8 @@ public typealias FetchPhotosCallback = ((_ photos: Array<Photo>, _ video: Array<
 
 public class PhotoManager {
     
-    public var spacing = 1.0 // 选择器中图片间距
+    public var spacing: CGFloat = 2.0 // 选择器中图片间距
+    public var margin: CGFloat = 4.0 // 选择器左右上下间距
     var saveTempPhotos: Bool = false // if save temp photos
     var localImages: Array<UIImage>?
     var seveSystemAlbum: Bool = false
@@ -81,7 +82,11 @@ public class PhotoManager {
     var tempAlbum: Album?
     
     public init() {
-        
+        if UIScreen.main.bounds.width > 320 {
+            self.rowCount = 4
+        } else {
+            self.rowCount = 3
+        }
     }
     
 //    public func
@@ -175,10 +180,6 @@ public class PhotoManager {
         }
     }
     
-    public func test() {
-        Device.iPhone6s_Later()
-    }
-    
     func fetchPhotosWithResult(result: PHFetchResult<PHAsset>, index: Int, callback: FetchPhotosCallback?) {
         var photos = Array<Photo>()
         var videos = Array<Photo>()
@@ -187,7 +188,7 @@ public class PhotoManager {
             var photo = Photo()
             photo.asset = asset
             if self.selectedList.count > 0 {
-                var tempSelectedList = self.selectedList
+                let tempSelectedList = self.selectedList
                 for (idx ,model) in tempSelectedList.enumerated() {
                     if model.asset?.localIdentifier == photo.asset?.localIdentifier {
                         photo.selected = true

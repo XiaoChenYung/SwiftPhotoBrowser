@@ -15,10 +15,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         test()
-        let _v = UIDevice.current.systemVersion
         
         let photoManager = PhotoManager()
-        photoManager.test()
         
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -29,13 +27,7 @@ class ViewController: UIViewController {
     }
 
     func test() -> () {
-let array = NSArray(array: [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20])
-array.enumerateObjects(options: .reverse) { (obj, idx, stop) in
-    print("内容" + "\(obj)")
-    if idx == 3 {
-        stop.pointee = true
-    }
-}
+
     }
     
 }
