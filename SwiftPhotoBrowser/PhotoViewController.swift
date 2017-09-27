@@ -67,6 +67,7 @@ extension PhotoViewController: UICollectionViewDataSource {
         return self.objs.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = UICollectionViewCell()
+        return cell
     }
 }
