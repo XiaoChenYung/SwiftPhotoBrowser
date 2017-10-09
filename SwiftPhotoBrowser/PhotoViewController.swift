@@ -53,6 +53,7 @@ class PhotoViewController: UIViewController, UICollectionViewDelegate {
         self.collectionView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.collectionView?.backgroundColor = UIColor.white
         self.automaticallyAdjustsScrollViewInsets = false
+        
     }
 
     override func didReceiveMemoryWarning() {

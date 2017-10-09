@@ -11,5 +11,6 @@ end
 target 'SwiftPhotoBrowserDemo' do
     # your other pod
     # ...
+    pod 'Alamofire'
     pod 'Kingfisher'
 end
