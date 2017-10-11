@@ -13,11 +13,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        test()
-        
-        let photoManager = PhotoManager()
-        
+        _ = Device.iPhone6s_Later()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
