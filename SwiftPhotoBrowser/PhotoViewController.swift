@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoViewController: UIViewController, UICollectionViewDelegate {
+public class PhotoViewController: UIViewController, UICollectionViewDelegate {
     
     var manager: PhotoManager
     var collectionView: UICollectionView?
@@ -21,18 +21,13 @@ class PhotoViewController: UIViewController, UICollectionViewDelegate {
         super.init(nibName: nil, bundle: nil)
     }
     
-    private init() {
-        self.manager = PhotoManager()//不会用到
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        self.setupUI()
         // Do any additional setup after loading the view.
     }
     
@@ -41,7 +36,7 @@ class PhotoViewController: UIViewController, UICollectionViewDelegate {
         let width = self.view.frame.width
         let height = self.view.frame.height
         let flowlayout = UICollectionViewFlowLayout()
-        let itemWidth = width - CGFloat((self.manager.rowCount) - 1) * (self.manager.spacing) - 2.0 * (self.manager.margin)
+        let itemWidth = (width - CGFloat(self.manager.rowCount - 1) * (self.manager.spacing) - 2.0 * self.manager.margin) / CGFloat(self.manager.rowCount)
         flowlayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         flowlayout.minimumLineSpacing = spacing
         flowlayout.minimumInteritemSpacing = spacing
@@ -52,11 +47,12 @@ class PhotoViewController: UIViewController, UICollectionViewDelegate {
         self.collectionView?.alwaysBounceVertical = true
         self.collectionView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.collectionView?.backgroundColor = UIColor.white
+        self.collectionView?.register(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "Cell")
         self.automaticallyAdjustsScrollViewInsets = false
-        
+        self.view.addSubview(self.collectionView!)
     }
 
-    override func didReceiveMemoryWarning() {
+    override public func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -64,11 +60,15 @@ class PhotoViewController: UIViewController, UICollectionViewDelegate {
 }
 
 extension PhotoViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.objs.count
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 100
     }
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView .dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        cell.backgroundColor = UIColor.red
         return cell
     }
 }

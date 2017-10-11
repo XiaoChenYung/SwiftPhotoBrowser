@@ -13,7 +13,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        _ = Device.iPhone6s_Later()
+        let photoManager = PhotoManager()       
+        let photoViewController = PhotoViewController(manager: photoManager)
+        self.addChildViewController(photoViewController)
+        photoViewController.view.frame = self.view.bounds
+        self.view.addSubview(photoViewController.view)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
