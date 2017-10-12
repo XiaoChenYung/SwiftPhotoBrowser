@@ -26,8 +26,8 @@ public typealias FetchPhotosCallback = ((_ photos: Array<Photo>, _ video: Array<
 
 public class PhotoManager {
     
-    public var spacing: CGFloat = 2.0 // 选择器中图片间距
-    public var margin: CGFloat = 4.0 // 选择器左右上下间距
+    public var spacing: CGFloat = 1.0 // 选择器中图片间距
+    public var margin: CGFloat = 2.0 // 选择器左右上下间距
     var saveTempPhotos: Bool = false // if save temp photos
     var localImages: Array<UIImage>?
     var seveSystemAlbum: Bool = false

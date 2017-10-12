@@ -32,15 +32,14 @@ public class PhotoViewController: UIViewController, UICollectionViewDelegate {
     }
     
     private func setupUI() {
-        let spacing = self.manager.spacing
         let width = self.view.frame.width
         let height = self.view.frame.height
         let flowlayout = UICollectionViewFlowLayout()
-        let itemWidth = (width - CGFloat(self.manager.rowCount - 1) * (self.manager.spacing) - 2.0 * self.manager.margin) / CGFloat(self.manager.rowCount)
+        let itemWidth = (width - CGFloat(self.manager.rowCount - 1) * (self.manager.spacing)) / CGFloat(self.manager.rowCount)
         flowlayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
-        flowlayout.minimumLineSpacing = spacing
-        flowlayout.minimumInteritemSpacing = spacing
-        self.collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: width, height: height), collectionViewLayout: flowlayout)
+        flowlayout.minimumLineSpacing = self.manager.spacing
+        flowlayout.minimumInteritemSpacing = self.manager.spacing
+        self.collectionView = UICollectionView(frame: CGRect(x: 0, y: 20, width: width, height: height - 20), collectionViewLayout: flowlayout)
         self.collectionView?.scrollIndicatorInsets = self.collectionView!.contentInset
         self.collectionView?.dataSource = self
         self.collectionView?.delegate = self
