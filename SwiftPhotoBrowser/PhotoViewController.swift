@@ -7,14 +7,11 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 public class PhotoViewController: UIViewController, UICollectionViewDelegate {
     
     var manager: PhotoManager
-    var collectionView: UICollectionView?
-    lazy var videos = Array<Photo>()
-    lazy var photos = Array<Photo>()
-    lazy var objs = Array<Photo>()
     
     public init(manager: PhotoManager) {
         self.manager = manager
@@ -28,10 +25,42 @@ public class PhotoViewController: UIViewController, UICollectionViewDelegate {
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
+        self.getImages()
         // Do any additional setup after loading the view.
     }
     
+    private func getImages() {
+        let hud = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), type: .ballGridPulse, color: UIColor.green, padding: 2)
+        self.view.addSubview(hud)
+        hud.center = self.view.center
+        hud.startAnimating()
+        self.manager.fetchAllAlbum(callback: { [unowned self] (albums) in
+            self.albums = albums
+//            hud.stopAnimating()
+//            hud.removeFromSuperview()
+        }, showSeletedTag: true)
+    }
+
+    /// 初始化UI
     private func setupUI() {
+        
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.view.addSubview(self.collectionView)
+    }
+
+    override public func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    /// 内容回调保存
+    private lazy var videos = Array<Photo>()
+    private lazy var photos = Array<Photo>()
+    private lazy var objs = Array<Photo>()
+    private lazy var albums = Array<Album>()
+    
+    /// 图片预览
+    private lazy var collectionView: UICollectionView = {
         let width = self.view.frame.width
         let height = self.view.frame.height
         let flowlayout = UICollectionViewFlowLayout()
@@ -39,22 +68,16 @@ public class PhotoViewController: UIViewController, UICollectionViewDelegate {
         flowlayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
         flowlayout.minimumLineSpacing = self.manager.spacing
         flowlayout.minimumInteritemSpacing = self.manager.spacing
-        self.collectionView = UICollectionView(frame: CGRect(x: 0, y: 20, width: width, height: height - 20), collectionViewLayout: flowlayout)
-        self.collectionView?.scrollIndicatorInsets = self.collectionView!.contentInset
-        self.collectionView?.dataSource = self
-        self.collectionView?.delegate = self
-        self.collectionView?.alwaysBounceVertical = true
-        self.collectionView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        self.collectionView?.backgroundColor = UIColor.white
-        self.collectionView?.register(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "Cell")
-        self.automaticallyAdjustsScrollViewInsets = false
-        self.view.addSubview(self.collectionView!)
-    }
-
-    override public func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        let collectionView = UICollectionView(frame: CGRect(x: 0, y: 20, width: width, height: height - 20), collectionViewLayout: flowlayout)
+        collectionView.scrollIndicatorInsets = collectionView.contentInset
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.alwaysBounceVertical = true
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.backgroundColor = UIColor.white
+        collectionView.register(UICollectionViewCell.classForCoder(), forCellWithReuseIdentifier: "Cell")
+        return collectionView
+    }()
 
 }
 

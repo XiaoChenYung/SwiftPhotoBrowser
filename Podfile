@@ -6,6 +6,7 @@ target 'SwiftPhotoBrowser' do
   # your other pod
   # ...
   pod 'Kingfisher'
+  pod 'NVActivityIndicatorView'
 end
 
 target 'SwiftPhotoBrowserDemo' do
